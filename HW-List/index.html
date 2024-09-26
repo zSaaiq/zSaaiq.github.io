@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Privacy Policy for our App">
+    <title>Datenschutz / Privacy Policy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #f4f4f4;
+            font-size: 14px;
+        }
+
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const userLang = navigator.language || navigator.userLanguage;
+
+            const contentDe = `
+                <h1>Datenschutz</h1>
+                <p>Wir nehmen den Schutz Ihrer Daten sehr ernst. Diese App sammelt oder speichert keine personenbezogenen Daten von den Nutzern. Alle Daten, die in der App gespeichert werden, bleiben ausschließlich auf Ihrem Gerät und sind für uns nicht zugänglich.</p>
+                <h2>Keine Datenerhebung</h2>
+                <p>Unsere App erhebt keine personenbezogenen Daten wie Namen, E-Mail-Adressen, Telefonnummern oder Standortdaten. Sie haben die vollständige Kontrolle über alle Informationen, die in der App gespeichert werden.</p>
+                <h2>Daten auf Ihrem Gerät</h2>
+                <p>Alle Daten, die Sie in der App speichern, werden lokal auf Ihrem Gerät gesichert. Wir haben keinen Zugriff auf diese Informationen, und sie werden nicht an Dritte weitergegeben.</p>
+                <h2>Sicherheit Ihrer Daten</h2>
+                <p>Da alle Daten nur auf Ihrem Gerät gespeichert werden, obliegt Ihnen die Verantwortung, Ihr Gerät vor unbefugtem Zugriff zu schützen. Wir empfehlen, Sicherheitsmaßnahmen wie Geräte-Passwörter oder biometrische Authentifizierung zu verwenden.</p>
+                <h2>Änderungen der Datenschutzrichtlinien</h2>
+                <p>Wir behalten uns das Recht vor, diese Datenschutzrichtlinien bei Bedarf zu ändern. Sollten Änderungen vorgenommen werden, werden Sie über die Aktualisierung informiert. Bitte überprüfen Sie regelmäßig diese Seite, um auf dem Laufenden zu bleiben.</p>
+                <p>Falls Sie Fragen oder Bedenken bezüglich unserer Datenschutzrichtlinien haben, können Sie uns jederzeit kontaktieren.</p>
+            `;
+
+            const contentEn = `
+                <h1>Privacy Policy</h1>
+                <p>We take the protection of your data very seriously. This app does not collect or store any personal data from users. All data stored in the app remains solely on your device and is not accessible to us.</p>
+                <h2>No Data Collection</h2>
+                <p>Our app does not collect personal data such as names, email addresses, phone numbers, or location data. You have full control over all the information stored in the app.</p>
+                <h2>Data on Your Device</h2>
+                <p>All data you store in the app is saved locally on your device. We do not have access to this information, and it is not shared with third parties.</p>
+                <h2>Data Security</h2>
+                <p>Since all data is stored only on your device, it is your responsibility to protect your device from unauthorized access. We recommend using security measures such as device passwords or biometric authentication.</p>
+                <h2>Changes to the Privacy Policy</h2>
+                <p>We reserve the right to change this privacy policy if necessary. If changes are made, you will be notified of the update. Please check this page regularly to stay informed.</p>
+                <p>If you have any questions or concerns about our privacy policy, you can contact us at any time.</p>
+            `;
+            if (userLang.startsWith("de")) {
+                document.getElementById("content").innerHTML = contentDe;
+            } else {
+                document.getElementById("content").innerHTML = contentEn;
+            }
+        });
+    </script>
+</head>
+<body>
+
+    <header>
+        <h1 id="title">Datenschutz / Privacy Policy</h1>
+    </header>
+
+    <section id="content">
+    </section>
+
+    <footer>
+        <p>&copy; 2024 HW-List. Alle Rechte vorbehalten. / All rights reserved.</p>
+        <p><a href="mailto:kevin.felix90@gmx.de">Kontaktieren Sie uns / Contact us</a></p>
+    </footer>
+
+</body>
+</html>
