@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MitsuhaPlayer – Datenschutz</title>
+
+    <meta
+        name="description"
+        content="Datenschutzerklärung von MitsuhaPlayer."
+    >
+
+    <style>
+        :root {
+            --background: #02060c;
+            --background-secondary: #071321;
+
+            --surface: rgba(18, 32, 51, 0.62);
+            --surface-light: rgba(28, 47, 72, 0.52);
+
+            --text: #f5f7fb;
+            --secondary: #a9b5c7;
+            --muted: #718096;
+
+            --border: rgba(150, 175, 210, 0.14);
+
+            --blue: #416fae;
+            --blue-light: #6e8fca;
+            --purple: #765276;
+
+            --radius: 28px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "SF Pro Display",
+                "SF Pro Text",
+                "Helvetica Neue",
+                Arial,
+                sans-serif;
+
+            color: var(--text);
+
+            background:
+                radial-gradient(
+                    circle at 50% -10%,
+                    rgba(58, 91, 143, 0.30),
+                    transparent 42%
+                ),
+                radial-gradient(
+                    circle at 0% 45%,
+                    rgba(91, 57, 91, 0.16),
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at 100% 80%,
+                    rgba(53, 91, 145, 0.16),
+                    transparent 35%
+                ),
+                linear-gradient(
+                    180deg,
+                    #02060c 0%,
+                    #06101d 55%,
+                    #02060c 100%
+                );
+
+            background-attachment: fixed;
+        }
+
+        body::before {
+            content: "";
+
+            position: fixed;
+            inset: 0;
+
+            pointer-events: none;
+
+            background:
+                linear-gradient(
+                    rgba(255,255,255,0.018) 1px,
+                    transparent 1px
+                );
+
+            background-size: 100% 4px;
+
+            opacity: 0.15;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        /* -------------------------------------------------- */
+        /* Page */
+        /* -------------------------------------------------- */
+
+        .page {
+            width: min(100% - 32px, 900px);
+            margin: 0 auto;
+            padding: 24px 0 60px;
+        }
+
+        /* -------------------------------------------------- */
+        /* Header */
+        /* -------------------------------------------------- */
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            margin-bottom: 80px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            text-decoration: none;
+        }
+
+        .brand-icon {
+            width: 40px;
+            height: 40px;
+
+            object-fit: cover;
+
+            border-radius: 11px;
+
+            box-shadow:
+                0 8px 25px rgba(0, 0, 0, 0.45);
+        }
+
+        .brand-name {
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        /* -------------------------------------------------- */
+        /* Language */
+        /* -------------------------------------------------- */
+
+        .language-switch {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+
+            padding: 4px;
+
+            border: 1px solid var(--border);
+            border-radius: 999px;
+
+            background: rgba(12, 23, 38, 0.72);
+
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+        }
+
+        .language-button {
+            border: 0;
+            background: transparent;
+
+            color: var(--muted);
+
+            padding: 7px 12px;
+
+            border-radius: 999px;
+
+            font-family: inherit;
+            font-size: 12px;
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition:
+                color 0.25s ease,
+                background 0.25s ease;
+        }
+
+        .language-button.active {
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(75, 112, 169, 0.95),
+                    rgba(78, 72, 120, 0.95)
+                );
+
+            box-shadow:
+                0 4px 14px rgba(0, 0, 0, 0.25);
+        }
+
+        /* -------------------------------------------------- */
+        /* Hero */
+        /* -------------------------------------------------- */
+
+        .hero {
+            text-align: center;
+
+            margin-bottom: 55px;
+        }
+
+        .app-icon {
+            display: block;
+
+            width: 130px;
+            height: 130px;
+
+            margin: 0 auto 30px;
+
+            object-fit: cover;
+
+            border-radius: 31px;
+
+            box-shadow:
+                0 25px 60px rgba(0, 0, 0, 0.50),
+                0 0 60px rgba(58, 91, 143, 0.18);
+
+            animation:
+                floatingIcon 6s ease-in-out infinite;
+        }
+
+        @keyframes floatingIcon {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .hero h1 {
+            margin: 0;
+
+            font-size: clamp(42px, 9vw, 72px);
+            line-height: 1;
+
+            font-weight: 700;
+
+            letter-spacing: -0.055em;
+
+            background:
+                linear-gradient(
+                    100deg,
+                    #b7bfd0 0%,
+                    #ffffff 30%,
+                    #9eafd0 65%,
+                    #6d86b5 100%
+                );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            color: transparent;
+        }
+
+        .hero-subtitle {
+            margin: 18px 0 0;
+
+            color: var(--secondary);
+
+            font-size: 19px;
+            font-weight: 400;
+
+            letter-spacing: -0.015em;
+        }
+
+        /* -------------------------------------------------- */
+        /* Main privacy statement */
+        /* -------------------------------------------------- */
+
+        .privacy-highlight {
+            position: relative;
+
+            padding: 34px;
+
+            margin-bottom: 16px;
+
+            overflow: hidden;
+
+            border: 1px solid rgba(130, 160, 200, 0.18);
+            border-radius: var(--radius);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(29, 49, 75, 0.72),
+                    rgba(15, 27, 43, 0.55)
+                );
+
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+
+            box-shadow:
+                0 25px 80px rgba(0, 0, 0, 0.28);
+        }
+
+        .privacy-highlight::after {
+            content: "";
+
+            position: absolute;
+
+            width: 300px;
+            height: 300px;
+
+            right: -130px;
+            top: -180px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(69, 105, 161, 0.20),
+                    transparent 70%
+                );
+
+            pointer-events: none;
+        }
+
+        .privacy-icon {
+            width: 44px;
+            height: 44px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 18px;
+
+            border-radius: 14px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(68, 105, 164, 0.35),
+                    rgba(101, 67, 105, 0.30)
+                );
+
+            border: 1px solid rgba(150, 175, 210, 0.14);
+
+            font-size: 21px;
+        }
+
+        .privacy-highlight h2 {
+            margin: 0 0 10px;
+
+            font-size: 25px;
+            font-weight: 600;
+
+            letter-spacing: -0.035em;
+        }
+
+        .privacy-highlight p {
+            margin: 0;
+
+            color: var(--secondary);
+
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        /* -------------------------------------------------- */
+        /* Privacy cards */
+        /* -------------------------------------------------- */
+
+        .privacy-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 16px;
+
+            margin-bottom: 16px;
+        }
+
+        .privacy-item {
+            padding: 27px;
+
+            border: 1px solid var(--border);
+            border-radius: 24px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(23, 40, 62, 0.62),
+                    rgba(10, 20, 33, 0.58)
+                );
+
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease;
+        }
+
+        .privacy-item:hover {
+            transform: translateY(-2px);
+
+            border-color:
+                rgba(120, 150, 195, 0.25);
+        }
+
+        .privacy-item-icon {
+            width: 40px;
+            height: 40px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 15px;
+
+            border-radius: 12px;
+
+            background:
+                rgba(73, 102, 146, 0.18);
+
+            font-size: 19px;
+        }
+
+        .privacy-item strong {
+            display: block;
+
+            margin-bottom: 6px;
+
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .privacy-item span {
+            color: var(--secondary);
+
+            font-size: 14px;
+            line-height: 1.55;
+        }
+
+        /* -------------------------------------------------- */
+        /* Sections */
+        /* -------------------------------------------------- */
+
+        .content {
+            display: grid;
+            gap: 16px;
+        }
+
+        .section {
+            padding: 30px;
+
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+
+            background:
+                rgba(12, 24, 39, 0.58);
+
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+
+            box-shadow:
+                0 10px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .section h2 {
+            margin: 0 0 13px;
+
+            font-size: 20px;
+            font-weight: 600;
+
+            letter-spacing: -0.025em;
+        }
+
+        .section p {
+            margin: 0;
+
+            color: var(--secondary);
+
+            font-size: 15px;
+            line-height: 1.75;
+        }
+
+        .section p + p {
+            margin-top: 13px;
+        }
+
+        /* -------------------------------------------------- */
+        /* Footer */
+        /* -------------------------------------------------- */
+
+        footer {
+            padding: 40px 10px 0;
+
+            text-align: center;
+
+            color: var(--muted);
+
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        footer strong {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        .last-updated {
+            margin-top: 6px;
+        }
+
+        /* -------------------------------------------------- */
+        /* Mobile */
+        /* -------------------------------------------------- */
+
+        @media (max-width: 650px) {
+
+            .page {
+                width: min(100% - 22px, 900px);
+                padding-top: 14px;
+                padding-bottom: 40px;
+            }
+
+            .header {
+                margin-bottom: 55px;
+            }
+
+            .brand-name {
+                display: none;
+            }
+
+            .app-icon {
+                width: 105px;
+                height: 105px;
+
+                border-radius: 25px;
+            }
+
+            .hero {
+                margin-bottom: 40px;
+            }
+
+            .hero-subtitle {
+                font-size: 17px;
+            }
+
+            .privacy-highlight,
+            .section {
+                padding: 24px;
+                border-radius: 23px;
+            }
+
+            .privacy-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
+            .app-icon {
+                animation: none;
+            }
+
+            .privacy-item {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="page">
+
+    <!-- Header -->
+
+    <header class="header">
+
+        <a href="#" class="brand">
+
+            <img
+                src="MitsuhaPlayer-preview.png"
+                alt="MitsuhaPlayer"
+                class="brand-icon"
+            >
+
+            <span class="brand-name">
+                MitsuhaPlayer
+            </span>
+
+        </a>
+
+        <div
+            class="language-switch"
+            aria-label="Language selection"
+        >
+
+            <button
+                id="deButton"
+                class="language-button active"
+                type="button"
+                onclick="setLanguage('de')"
+            >
+                DE
+            </button>
+
+            <button
+                id="enButton"
+                class="language-button"
+                type="button"
+                onclick="setLanguage('en')"
+            >
+                EN
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- Hero -->
+
+    <main>
+
+        <section class="hero">
+
+            <img
+                src="MitsuhaPlayer-preview.png"
+                alt="MitsuhaPlayer App Icon"
+                class="app-icon"
+            >
+
+            <h1>
+                MitsuhaPlayer
+            </h1>
+
+            <p
+                class="hero-subtitle"
+                data-de="Datenschutzerklärung"
+                data-en="Privacy Policy"
+            >
+                Datenschutzerklärung
+            </p>
+
+        </section>
+
+
+        <!-- Privacy highlight -->
+
+        <section class="privacy-highlight">
+
+            <div class="privacy-icon">
+                🔒
+            </div>
+
+            <h2
+                data-de="Deine Privatsphäre bleibt privat."
+                data-en="Your privacy stays private."
+            >
+                Deine Privatsphäre bleibt privat.
+            </h2>
+
+            <p
+                data-de="MitsuhaPlayer erhebt, speichert oder verarbeitet keine personenbezogenen Daten. Die App benötigt keine persönlichen Informationen, um ihre Funktionen bereitzustellen."
+                data-en="MitsuhaPlayer does not collect, store, or process personal data. The app does not require personal information to provide its functionality."
+            >
+                MitsuhaPlayer erhebt, speichert oder verarbeitet keine personenbezogenen Daten. Die App benötigt keine persönlichen Informationen, um ihre Funktionen bereitzustellen.
+            </p>
+
+        </section>
+
+
+        <!-- Privacy overview -->
+
+        <div class="privacy-grid">
+
+            <div class="privacy-item">
+
+                <div class="privacy-item-icon">
+                    🎵
+                </div>
+
+                <strong
+                    data-de="MP3-Dateien"
+                    data-en="MP3 Files"
+                >
+                    MP3-Dateien
+                </strong>
+
+                <span
+                    data-de="Du kannst MP3-Dateien importieren und mit MitsuhaPlayer anhören."
+                    data-en="You can import MP3 files and listen to them with MitsuhaPlayer."
+                >
+                    Du kannst MP3-Dateien importieren und mit MitsuhaPlayer anhören.
+                </span>
+
+            </div>
+
+
+            <div class="privacy-item">
+
+                <div class="privacy-item-icon">
+                    🛡️
+                </div>
+
+                <strong
+                    data-de="Keine personenbezogenen Daten"
+                    data-en="No Personal Data"
+                >
+                    Keine personenbezogenen Daten
+                </strong>
+
+                <span
+                    data-de="Es werden keine persönlichen Informationen wie Namen, E-Mail-Adressen oder Benutzerkonten erfasst."
+                    data-en="No personal information such as names, email addresses, or user accounts is collected."
+                >
+                    Es werden keine persönlichen Informationen wie Namen, E-Mail-Adressen oder Benutzerkonten erfasst.
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Content -->
+
+        <div class="content">
+
+            <section class="section">
+
+                <h2
+                    data-de="1. Allgemeine Informationen"
+                    data-en="1. General Information"
+                >
+                    1. Allgemeine Informationen
+                </h2>
+
+                <p
+                    data-de="MitsuhaPlayer ist ein lokaler MP3-Player. Die App ermöglicht das Importieren und Abspielen von MP3-Dateien. Für die Nutzung der App ist kein Benutzerkonto erforderlich."
+                    data-en="MitsuhaPlayer is a local MP3 player. The app allows users to import and play MP3 files. No user account is required to use the app."
+                >
+                    MitsuhaPlayer ist ein lokaler MP3-Player. Die App ermöglicht das Importieren und Abspielen von MP3-Dateien. Für die Nutzung der App ist kein Benutzerkonto erforderlich.
+                </p>
+
+            </section>
+
+
+            <section class="section">
+
+                <h2
+                    data-de="2. Erhebung personenbezogener Daten"
+                    data-en="2. Collection of Personal Data"
+                >
+                    2. Erhebung personenbezogener Daten
+                </h2>
+
+                <p
+                    data-de="MitsuhaPlayer erhebt keine personenbezogenen Daten. Es werden keine Namen, E-Mail-Adressen, Telefonnummern, Standortdaten oder vergleichbare persönliche Informationen erfasst."
+                    data-en="MitsuhaPlayer does not collect personal data. No names, email addresses, telephone numbers, location data, or similar personal information are collected."
+                >
+                    MitsuhaPlayer erhebt keine personenbezogenen Daten. Es werden keine Namen, E-Mail-Adressen, Telefonnummern, Standortdaten oder vergleichbare persönliche Informationen erfasst.
+                </p>
+
+            </section>
+
+
+            <section class="section">
+
+                <h2
+                    data-de="3. MP3-Dateien"
+                    data-en="3. MP3 Files"
+                >
+                    3. MP3-Dateien
+                </h2>
+
+                <p
+                    data-de="Die einzige Möglichkeit, eigene Inhalte in MitsuhaPlayer zu verwenden, besteht darin, MP3-Dateien zu importieren. Diese Dateien dienen ausschließlich der Wiedergabe innerhalb der App."
+                    data-en="The only way to use your own content in MitsuhaPlayer is by importing MP3 files. These files are used solely for playback within the app."
+                >
+                    Die einzige Möglichkeit, eigene Inhalte in MitsuhaPlayer zu verwenden, besteht darin, MP3-Dateien zu importieren. Diese Dateien dienen ausschließlich der Wiedergabe innerhalb der App.
+                </p>
+
+                <p
+                    data-de="Die App übermittelt die importierten MP3-Dateien nicht an den Entwickler oder an einen externen Server."
+                    data-en="The app does not transmit imported MP3 files to the developer or to an external server."
+                >
+                    Die App übermittelt die importierten MP3-Dateien nicht an den Entwickler oder an einen externen Server.
+                </p>
+
+            </section>
+
+
+            <section class="section">
+
+                <h2
+                    data-de="4. Speicherung"
+                    data-en="4. Storage"
+                >
+                    4. Speicherung
+                </h2>
+
+                <p
+                    data-de="Die von dir importierten MP3-Dateien werden auf deinem Gerät beziehungsweise innerhalb der von iOS bereitgestellten App-Umgebung gespeichert und verwaltet."
+                    data-en="MP3 files you import are stored and managed on your device and within the app environment provided by iOS."
+                >
+                    Die von dir importierten MP3-Dateien werden auf deinem Gerät beziehungsweise innerhalb der von iOS bereitgestellten App-Umgebung gespeichert und verwaltet.
+                </p>
+
+            </section>
+
+
+            <section class="section">
+
+                <h2
+                    data-de="5. Drittanbieter"
+                    data-en="5. Third-Party Services"
+                >
+                    5. Drittanbieter
+                </h2>
+
+                <p
+                    data-de="MitsuhaPlayer verwendet keine Dienste von Drittanbietern, die personenbezogene Daten für Analyse-, Tracking- oder Werbezwecke erfassen."
+                    data-en="MitsuhaPlayer does not use third-party services that collect personal data for analytics, tracking, or advertising purposes."
+                >
+                    MitsuhaPlayer verwendet keine Dienste von Drittanbietern, die personenbezogene Daten für Analyse-, Tracking- oder Werbezwecke erfassen.
+                </p>
+
+            </section>
+
+
+            <section class="section">
+
+                <h2
+                    data-de="6. Tracking und Analyse"
+                    data-en="6. Tracking and Analytics"
+                >
+                    6. Tracking und Analyse
+                </h2>
+
+                <p
+                    data-de="Es findet kein personenbezogenes Tracking statt. MitsuhaPlayer erstellt keine Benutzerprofile und analysiert nicht das individuelle Nutzungsverhalten."
+                    data-en="No personal tracking takes place. MitsuhaPlayer does not create user profiles or analyze individual user behavior."
+                >
+                    Es findet kein personenbezogenes Tracking statt. MitsuhaPlayer erstellt keine Benutzerprofile und analysiert nicht das individuelle Nutzungsverhalten.
+                </p>
+
+            </section>
+
+
+            <section class="section">
+
+                <h2
+                    data-de="7. Kontakt"
+                    data-en="7. Contact"
+                >
+                    7. Kontakt
+                </h2>
+
+                <p
+                    data-de="Wenn du Fragen zum Datenschutz oder zu MitsuhaPlayer hast, kannst du den Entwickler über die auf der offiziellen App- oder Projektseite angegebenen Kontaktmöglichkeiten erreichen."
+                    data-en="If you have questions about privacy or MitsuhaPlayer, you can contact the developer using the contact information provided on the official app or project page."
+                >
+                    Wenn du Fragen zum Datenschutz oder zu MitsuhaPlayer hast, kannst du den Entwickler über die auf der offiziellen App- oder Projektseite angegebenen Kontaktmöglichkeiten erreichen.
+                </p>
+
+            </section>
+
+
+            <section class="section">
+
+                <h2
+                    data-de="8. Änderungen dieser Datenschutzerklärung"
+                    data-en="8. Changes to This Privacy Policy"
+                >
+                    8. Änderungen dieser Datenschutzerklärung
+                </h2>
+
+                <p
+                    data-de="Diese Datenschutzerklärung kann angepasst werden, wenn sich die Funktionen von MitsuhaPlayer oder der Umgang mit Daten ändern."
+                    data-en="This Privacy Policy may be updated if the functionality of MitsuhaPlayer or its handling of data changes."
+                >
+                    Diese Datenschutzerklärung kann angepasst werden, wenn sich die Funktionen von MitsuhaPlayer oder der Umgang mit Daten ändern.
+                </p>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <div>
+            <strong>MitsuhaPlayer</strong>
+        </div>
+
+        <div
+            class="last-updated"
+            data-de="Stand: 8. September 2026"
+            data-en="Last updated: September 8, 2026"
+        >
+            Stand: 8. September 2026
+        </div>
+
+    </footer>
+
+</div>
+
+
+<script>
+
+    function setLanguage(language) {
+
+        document.documentElement.lang = language;
+
+        document
+            .querySelectorAll("[data-de][data-en]")
+            .forEach(element => {
+
+                element.textContent =
+                    element.dataset[language];
+
+            });
+
+
+        document
+            .getElementById("deButton")
+            .classList.toggle(
+                "active",
+                language === "de"
+            );
+
+
+        document
+            .getElementById("enButton")
+            .classList.toggle(
+                "active",
+                language === "en"
+            );
+
+
+        document.title =
+            language === "de"
+                ? "MitsuhaPlayer – Datenschutz"
+                : "MitsuhaPlayer – Privacy Policy";
+
+
+        localStorage.setItem(
+            "mitsuhaPrivacyLanguage",
+            language
+        );
+    }
+
+
+    document.addEventListener(
+        "DOMContentLoaded",
+        () => {
+
+            const savedLanguage =
+                localStorage.getItem(
+                    "mitsuhaPrivacyLanguage"
+                );
+
+            setLanguage(
+                savedLanguage === "en"
+                    ? "en"
+                    : "de"
+            );
+        }
+    );
+
+</script>
+
+</body>
+</html>
